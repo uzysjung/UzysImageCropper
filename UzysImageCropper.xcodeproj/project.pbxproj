@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9552A78C168305FC006C39B5 /* Hyuna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9552A78B168305FC006C39B5 /* Hyuna.jpg */; };
+		9595D4741683FA5500928DC8 /* UIImage-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D46F1683FA5500928DC8 /* UIImage-Extension.m */; };
+		9595D4751683FA5500928DC8 /* UzysImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4711683FA5500928DC8 /* UzysImageCropper.m */; };
+		9595D4761683FA5500928DC8 /* UzysImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */; };
+		C09FE23214FCB8BC0012A2BB /* nc_crop_reset_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */; };
+		C09FE23314FCB8BC0012A2BB /* nc_crop_reset_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */; };
+		C09FE23414FCB8BC0012A2BB /* nc_crop_rotate_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */; };
+		C09FE23514FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE23114FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png */; };
+		C0FCD38F14973CF200BFCA38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FCD38E14973CF200BFCA38 /* UIKit.framework */; };
+		C0FCD39114973CF200BFCA38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FCD39014973CF200BFCA38 /* Foundation.framework */; };
+		C0FCD39314973CF200BFCA38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FCD39214973CF200BFCA38 /* CoreGraphics.framework */; };
+		C0FCD39914973CF200BFCA38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0FCD39714973CF200BFCA38 /* InfoPlist.strings */; };
+		C0FCD39B14973CF200BFCA38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FCD39A14973CF200BFCA38 /* main.m */; };
+		C0FCD39F14973CF200BFCA38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FCD39E14973CF200BFCA38 /* AppDelegate.m */; };
+		C0FCD3A214973CF200BFCA38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FCD3A114973CF200BFCA38 /* ViewController.m */; };
+		C0FCD3A514973CF200BFCA38 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0FCD3A314973CF200BFCA38 /* ViewController.xib */; };
+		C0FFFEA8149B21AE007B78DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0FFFEA7149B21AE007B78DE /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9552A78B168305FC006C39B5 /* Hyuna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hyuna.jpg; sourceTree = "<group>"; };
+		9595D46E1683FA5500928DC8 /* UIImage-Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extension.h"; sourceTree = "<group>"; };
+		9595D46F1683FA5500928DC8 /* UIImage-Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extension.m"; sourceTree = "<group>"; };
+		9595D4701683FA5500928DC8 /* UzysImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysImageCropper.h; sourceTree = "<group>"; };
+		9595D4711683FA5500928DC8 /* UzysImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysImageCropper.m; sourceTree = "<group>"; };
+		9595D4721683FA5500928DC8 /* UzysImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysImageCropperViewController.h; sourceTree = "<group>"; };
+		9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysImageCropperViewController.m; sourceTree = "<group>"; };
+		C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn.png; sourceTree = "<group>"; };
+		C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn_h.png; sourceTree = "<group>"; };
+		C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_rotate_btn.png; sourceTree = "<group>"; };
+		C09FE23114FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_rotate_btn_h.png; sourceTree = "<group>"; };
+		C0FCD38A14973CF200BFCA38 /* UzysImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UzysImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0FCD38E14973CF200BFCA38 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C0FCD39014973CF200BFCA38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C0FCD39214973CF200BFCA38 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C0FCD39614973CF200BFCA38 /* UzysImageCropper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UzysImageCropper-Info.plist"; sourceTree = "<group>"; };
+		C0FCD39814973CF200BFCA38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C0FCD39A14973CF200BFCA38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0FCD39C14973CF200BFCA38 /* UzysImageCropper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UzysImageCropper-Prefix.pch"; sourceTree = "<group>"; };
+		C0FCD39D14973CF200BFCA38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C0FCD39E14973CF200BFCA38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C0FCD3A014973CF200BFCA38 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C0FCD3A114973CF200BFCA38 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C0FCD3A414973CF200BFCA38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		C0FFFEA7149B21AE007B78DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0FCD38714973CF200BFCA38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0FFFEA8149B21AE007B78DE /* QuartzCore.framework in Frameworks */,
+				C0FCD38F14973CF200BFCA38 /* UIKit.framework in Frameworks */,
+				C0FCD39114973CF200BFCA38 /* Foundation.framework in Frameworks */,
+				C0FCD39314973CF200BFCA38 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9595D46D1683FA5500928DC8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9595D46E1683FA5500928DC8 /* UIImage-Extension.h */,
+				9595D46F1683FA5500928DC8 /* UIImage-Extension.m */,
+				9595D4701683FA5500928DC8 /* UzysImageCropper.h */,
+				9595D4711683FA5500928DC8 /* UzysImageCropper.m */,
+				9595D4721683FA5500928DC8 /* UzysImageCropperViewController.h */,
+				9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		C09FE22D14FCB8BC0012A2BB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */,
+				C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */,
+				C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */,
+				C09FE23114FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C0FCD37F14973CF200BFCA38 = {
+			isa = PBXGroup;
+			children = (
+				C0FFFEA7149B21AE007B78DE /* QuartzCore.framework */,
+				C0FCD39414973CF200BFCA38 /* UzysImageCropper */,
+				C0FCD38D14973CF200BFCA38 /* Frameworks */,
+				C0FCD38B14973CF200BFCA38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C0FCD38B14973CF200BFCA38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0FCD38A14973CF200BFCA38 /* UzysImageCropper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0FCD38D14973CF200BFCA38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0FCD38E14973CF200BFCA38 /* UIKit.framework */,
+				C0FCD39014973CF200BFCA38 /* Foundation.framework */,
+				C0FCD39214973CF200BFCA38 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0FCD39414973CF200BFCA38 /* UzysImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				9595D46D1683FA5500928DC8 /* Library */,
+				9552A78B168305FC006C39B5 /* Hyuna.jpg */,
+				C0FCD39D14973CF200BFCA38 /* AppDelegate.h */,
+				C0FCD39E14973CF200BFCA38 /* AppDelegate.m */,
+				C0FCD3A014973CF200BFCA38 /* ViewController.h */,
+				C0FCD3A114973CF200BFCA38 /* ViewController.m */,
+				C0FCD3A314973CF200BFCA38 /* ViewController.xib */,
+				C0FCD39514973CF200BFCA38 /* Supporting Files */,
+				C09FE22D14FCB8BC0012A2BB /* Resource */,
+			);
+			path = UzysImageCropper;
+			sourceTree = "<group>";
+		};
+		C0FCD39514973CF200BFCA38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0FCD39614973CF200BFCA38 /* UzysImageCropper-Info.plist */,
+				C0FCD39714973CF200BFCA38 /* InfoPlist.strings */,
+				C0FCD39A14973CF200BFCA38 /* main.m */,
+				C0FCD39C14973CF200BFCA38 /* UzysImageCropper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0FCD38914973CF200BFCA38 /* UzysImageCropper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0FCD3A814973CF200BFCA38 /* Build configuration list for PBXNativeTarget "UzysImageCropper" */;
+			buildPhases = (
+				C0FCD38614973CF200BFCA38 /* Sources */,
+				C0FCD38714973CF200BFCA38 /* Frameworks */,
+				C0FCD38814973CF200BFCA38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UzysImageCropper;
+			productName = UzysImageCropper;
+			productReference = C0FCD38A14973CF200BFCA38 /* UzysImageCropper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0FCD38114973CF200BFCA38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = NCSoft;
+			};
+			buildConfigurationList = C0FCD38414973CF200BFCA38 /* Build configuration list for PBXProject "UzysImageCropper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C0FCD37F14973CF200BFCA38;
+			productRefGroup = C0FCD38B14973CF200BFCA38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0FCD38914973CF200BFCA38 /* UzysImageCropper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0FCD38814973CF200BFCA38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0FCD39914973CF200BFCA38 /* InfoPlist.strings in Resources */,
+				C0FCD3A514973CF200BFCA38 /* ViewController.xib in Resources */,
+				C09FE23214FCB8BC0012A2BB /* nc_crop_reset_btn.png in Resources */,
+				C09FE23314FCB8BC0012A2BB /* nc_crop_reset_btn_h.png in Resources */,
+				C09FE23414FCB8BC0012A2BB /* nc_crop_rotate_btn.png in Resources */,
+				C09FE23514FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png in Resources */,
+				9552A78C168305FC006C39B5 /* Hyuna.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0FCD38614973CF200BFCA38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0FCD39B14973CF200BFCA38 /* main.m in Sources */,
+				C0FCD39F14973CF200BFCA38 /* AppDelegate.m in Sources */,
+				C0FCD3A214973CF200BFCA38 /* ViewController.m in Sources */,
+				9595D4741683FA5500928DC8 /* UIImage-Extension.m in Sources */,
+				9595D4751683FA5500928DC8 /* UzysImageCropper.m in Sources */,
+				9595D4761683FA5500928DC8 /* UzysImageCropperViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0FCD39714973CF200BFCA38 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0FCD39814973CF200BFCA38 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C0FCD3A314973CF200BFCA38 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0FCD3A414973CF200BFCA38 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0FCD3A614973CF200BFCA38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C0FCD3A714973CF200BFCA38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0FCD3A914973CF200BFCA38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
+				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C0FCD3AA14973CF200BFCA38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
+				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0FCD38414973CF200BFCA38 /* Build configuration list for PBXProject "UzysImageCropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0FCD3A614973CF200BFCA38 /* Debug */,
+				C0FCD3A714973CF200BFCA38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0FCD3A814973CF200BFCA38 /* Build configuration list for PBXNativeTarget "UzysImageCropper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0FCD3A914973CF200BFCA38 /* Debug */,
+				C0FCD3AA14973CF200BFCA38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0FCD38114973CF200BFCA38 /* Project object */;
+}
