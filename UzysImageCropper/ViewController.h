@@ -12,7 +12,7 @@
 
 @interface ViewController : UIViewController <UzysImageCropperDelegate>
 {
-    UzysImageCropperViewController *imgCropperView;
+    UzysImageCropperViewController *_imgCropperViewController;
 }
 @property (nonatomic,retain) UIImageView *resultImgView;
 @end

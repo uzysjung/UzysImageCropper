@@ -6,7 +6,6 @@
 //
 
 #import "ViewController.h"
-#import "UzysImageCropper.h"
 @implementation ViewController
 
 - (void)didReceiveMemoryWarning
@@ -19,7 +18,7 @@
 - (void) cropButton
 {
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [self presentModalViewController:imgCropperView animated:YES];
+    [self presentModalViewController:_imgCropperViewController animated:YES];
     
 }
 - (void)viewDidLoad
@@ -29,10 +28,9 @@
     
     [self.view setFrame:[UIScreen mainScreen].applicationFrame];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    imgCropperView = [[UzysImageCropperViewController alloc] initWithImage:[UIImage imageNamed:@"Hyuna.jpg"] andframeSize:self.view.frame.size andcropSize:CGSizeMake(1024, 580)];
-    imgCropperView.delegate = self;
-    imgCropperView.modalPresentationStyle = UIModalPresentationFullScreen;
-    
+    _imgCropperViewController = [[UzysImageCropperViewController alloc] initWithImage:[UIImage imageNamed:@"Hyuna.jpg"] andframeSize:[UIScreen mainScreen].bounds.size andcropSize:CGSizeMake(1024, 580)];
+    _imgCropperViewController.delegate = self;
+    _imgCropperViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     
     UIButton *cropper = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [cropper setFrame:CGRectMake(0, 0, 100, 30)];
@@ -75,6 +73,9 @@
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+#pragma mark - UzysImageCropperDelegate
+
 - (void)imageCropper:(UzysImageCropperViewController *)cropper didFinishCroppingWithImage:(UIImage *)image {
     
     if(self.resultImgView)

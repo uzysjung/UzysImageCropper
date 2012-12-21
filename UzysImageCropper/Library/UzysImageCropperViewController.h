@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UzysImageCropper.h"
 @protocol UzysImageCropperDelegate;
 
 @class  UzysImageCropper;

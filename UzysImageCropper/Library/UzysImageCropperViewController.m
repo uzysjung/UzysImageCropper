@@ -6,7 +6,7 @@
 //
 
 #import "UzysImageCropperViewController.h"
-#import "UzysImageCropper.h"
+
 
 @implementation UzysImageCropperViewController
 @synthesize cropperView,delegate;
@@ -39,9 +39,6 @@
         [[self view] addSubview:navigationBar];
         
         [navigationBar release];
-
-        
- 
         
         UIButton *btn_rotation = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn_rotation setFrame:CGRectMake(0 , cropperView.frame.size.height - 32 , 44, 32)];
