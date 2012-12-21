@@ -21,7 +21,9 @@ Import header.
 Simply define CropviewController View size and cropImage size.
 
 ``` objective-c
-_imgCropperViewController = [[UzysImageCropperViewController alloc] initWithImage:[UIImage imageNamed:@"Hyuna.jpg"] andframeSize:[UIScreen mainScreen].bounds.size andcropSize:CGSizeMake(1024, 580)];
+_imgCropperViewController = [[UzysImageCropperViewController alloc] initWithImage:[UIImage imageNamed:@"Hyuna.jpg"] 
+																	andframeSize:[UIScreen mainScreen].bounds.size 
+																	andcropSize:CGSizeMake(1024, 580)];
 _imgCropperViewController.delegate = self;
 _imgCropperViewController.modalPresentationStyle = UIModalPresentationFullScreen;
 ```
@@ -29,10 +31,11 @@ _imgCropperViewController.modalPresentationStyle = UIModalPresentationFullScreen
 ###Delegate
 ``` objective-c
 - (void)imageCropper:(UzysImageCropperViewController *)cropper didFinishCroppingWithImage:(UIImage *)image {
-    
+    //Save Image here
+	[self dismissModalViewControllerAnimated:YES];
 }
 
-*- (void)imageCropperDidCancel:(UzysImageCropperViewController *)cropper {
+- (void)imageCropperDidCancel:(UzysImageCropperViewController *)cropper {
     [self dismissModalViewControllerAnimated:YES];
 }
-* ```
+```
