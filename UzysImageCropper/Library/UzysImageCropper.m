@@ -72,32 +72,19 @@
         
         if(imgViewFrame.origin.x >= minX) //left
         {
-            //  imgViewFrame.origin.x = minX;
             collideState = 1;
-            // CGFloat newnewScale = ( (minX - self.imgView.center.x) *-2 ) / self.imgView.frame.size.width ;
-            // newScale = newnewScale;
         }
         else if(imgViewFrame.origin.y >= minY) // up 
         {
-            //  imgViewFrame.origin.y = minY;
             collideState = 2;
-            //            CGFloat newnewScale =( (minY - self.imgView.center.y) *-2 ) /self.imgView.frame.size.height ;
-            //            newScale = newnewScale;
         }
         else if(imgViewMaxX <= maxX) //right
         {
-            //  imgViewFrame.origin.x = maxX - imgViewFrame.size.width;
             collideState = 3;
-            //            CGFloat newnewScale =  (((maxX - self.imgView.frame.size.width) - self.imgView.center.x)*-2 ) / self.imgView.frame.size.width;
-            //            newScale = newnewScale;
         }
         else if(imgViewMaxY <= maxY) //down
         {
-            //  imgViewFrame.origin.y = maxY - imgViewFrame.size.height;
             collideState = 4;
-            //            CGFloat newnewScale =(((maxY - self.imgView.frame.size.height) - self.imgView.center.y)*-2 ) / self.imgView.frame.size.height;
-            //           
-            //            newScale =  newnewScale;
         }
         
         //        NSLog(@"scale :%f",newScale);
@@ -295,9 +282,7 @@
         //Variable for GestureRecognizer
         translateX =0;
         translateY =0;
-    
-  
-         
+        
         self.frame = CGRectMake(0, 0, frameSize.width, frameSize.height);
         inputImage = [newImage retain];
         
@@ -363,9 +348,6 @@
 
 - (UIImage*) getCroppedImage
 {
-    
-
-
     double zoomScale = [[self.imgView.layer valueForKeyPath:@"transform.scale.x"] floatValue];
     double rotationZ = [[self.imgView.layer valueForKeyPath:@"transform.rotation.z"] floatValue];
 

@@ -6,7 +6,7 @@
 //
 
 #import "UzysImageCropperViewController.h"
-
+#import "UIImage-Extension.h"
 
 @implementation UzysImageCropperViewController
 @synthesize cropperView,delegate;
@@ -16,12 +16,16 @@
     self = [super init];
 	
 	if (self) {
-        
+        if(newImage.size.width <= cropSize.width || newImage.size.height <= cropSize.height)
+        {
+            NSLog(@"Image Size is smaller than cropSzie");
+            newImage = [newImage imageByScalingProportionallyToSize:CGSizeMake(cropSize.width*1.3, cropSize.height*1.3)];
+        }
         self.view.backgroundColor = [UIColor blackColor];
         cropperView = [[UzysImageCropper alloc] 
                        initWithImage:newImage 
                        andframeSize:frameSize
-                       andcropSize:CGSizeMake(1024  , 580)];
+                       andcropSize:cropSize];
         
         [self.view addSubview:cropperView];
         UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
