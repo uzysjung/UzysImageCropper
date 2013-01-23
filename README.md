@@ -2,7 +2,7 @@ UzysImageCropper
 ================
 
 An alternative to the UIImagePickerController editor with extended features.
-![Screenshot](https://www.dropbox.com/s/irvk23lt9ah1ire/UzysImageCropper.png)
+![Screenshot](https://github.com/uzysjung/UzysImageCropper/raw/master/UzysImageCropper.png)
 
 ## Installation
 Copy over the files libary folder to your project folder
