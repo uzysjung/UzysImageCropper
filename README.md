@@ -6,7 +6,7 @@ An alternative to the UIImagePickerController editor with extended features.
 
 ## Installation
 Copy over the files libary folder to your project folder
-
+Support Both ARC and non-ARC Project
 ## Usage
 
 Import header.
