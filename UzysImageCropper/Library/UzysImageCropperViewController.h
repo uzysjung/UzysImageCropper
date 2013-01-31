@@ -7,12 +7,14 @@
 
 #import <UIKit/UIKit.h>
 #import "UzysImageCropper.h"
+#import "ARCHelper.h"
+
 @protocol UzysImageCropperDelegate;
 @class  UzysImageCropper;
 
 @interface UzysImageCropperViewController : UIViewController 
 
-@property (nonatomic,retain) UzysImageCropper *cropperView;
+@property (nonatomic,strong) UzysImageCropper *cropperView;
 @property (nonatomic, assign) id <UzysImageCropperDelegate> delegate;
 
 - (id)initWithImage:(UIImage*)newImage andframeSize:(CGSize)frameSize andcropSize:(CGSize)cropSize;

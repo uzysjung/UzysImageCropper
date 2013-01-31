@@ -21,7 +21,7 @@
 @end
 
 @implementation UzysImageCropper
-@synthesize imgView,inputImage,cropRect;
+@synthesize imgView = _imgView,inputImage=_inputImage,cropRect=_cropRect;
 
 #pragma mark - initialize
 
@@ -56,22 +56,21 @@
         _translateY =0;
         
         self.frame = CGRectMake(0, 0, frameSize.width, frameSize.height);
-        inputImage = [newImage retain];
-        
+        self.inputImage = newImage;
         //Case 1 실제 이미지를 frame Width size에 맞춤 --> 이미지가 커지면 크롭영역도 320x480의 프레임 영역에서 작게 표시됨.
         //_imageScale = frameSize.width / inputImage.size.width; //scale criteria depend on width size
         
         //Case 2 crop Width를 310에 고정 --> 크롭영역은 일정.
         _imageScale = 310/cropSize.width ;
         
-        CGRect imgViewBound = CGRectMake(0, 0, inputImage.size.width*_imageScale, inputImage.size.height*_imageScale);   //이미지가 생성될 사이즈.
-        imgView = [[UIImageView alloc] initWithFrame:imgViewBound];
-        imgView.center = self.center;
-        imgView.image = inputImage;
-        imgView.backgroundColor = [UIColor whiteColor];
+        CGRect imgViewBound = CGRectMake(0, 0, _inputImage.size.width*_imageScale, _inputImage.size.height*_imageScale);   //이미지가 생성될 사이즈.
+        _imgView = [[UIImageView alloc] initWithFrame:imgViewBound];
+        _imgView.center = self.center;
+        _imgView.image = _inputImage;
+        _imgView.backgroundColor = [UIColor whiteColor];
         
-        _imgViewframeInitValue = imgView.frame;
-        _imgViewcenterInitValue = imgView.center;
+        _imgViewframeInitValue = _imgView.frame;
+        _imgViewcenterInitValue = _imgView.center;
         _realCropsize = cropSize; // _realCropsize = Cropping Size in RealImage
         
         //cropX,cropY = cropRect position to center in Frame.
@@ -79,11 +78,11 @@
         double cropY = (self.imgView.frame.size.height/2) - (_imageScale*cropSize.height/2);
         
         //cropX위치 + imgViewframe이 가운데 정렬되어있으므로 그위치 만큼 이동.
-        cropRect = CGRectMake(cropX+ _imgViewframeInitValue.origin.x, cropY+ _imgViewframeInitValue.origin.y, _imageScale*cropSize.width, _imageScale*cropSize.height);
+        _cropRect = CGRectMake(cropX+ _imgViewframeInitValue.origin.x, cropY+ _imgViewframeInitValue.origin.y, _imageScale*cropSize.width, _imageScale*cropSize.height);
         
         
         //_cropperView show the view will crop.
-        _cropperView = [[UIView alloc] initWithFrame:cropRect];
+        _cropperView = [[UIView alloc] initWithFrame:_cropRect];
         _cropperView.backgroundColor = [UIColor blueColor];
         _cropperView.alpha = 0.5;
         
@@ -97,7 +96,7 @@
         cropimg.hidden = YES;
 #endif
         
-        [self addSubview:imgView];
+        [self addSubview:_imgView];
         [self addSubview:cropimg];
         [self addSubview:_cropperView];
         [self setupGestureRecognizer];
@@ -124,12 +123,12 @@
     if ([sender state] == UIGestureRecognizerStateChanged
         || [sender state] == UIGestureRecognizerStateEnded)
     {
-        CGRect imgViewFrame = imgView.frame;
+        CGRect imgViewFrame = _imgView.frame;
         CGFloat minX,minY,maxX,maxY,imgViewMaxX,imgViewMaxY;
-        minX= CGRectGetMinX(cropRect);
-        minY= CGRectGetMinY(cropRect);
-        maxX= CGRectGetMaxX(cropRect);
-        maxY= CGRectGetMaxY(cropRect);
+        minX= CGRectGetMinX(_cropRect);
+        minY= CGRectGetMinY(_cropRect);
+        maxX= CGRectGetMaxX(_cropRect);
+        maxY= CGRectGetMaxY(_cropRect);
         
         CGFloat currentScale = [[self.imgView.layer valueForKeyPath:@"transform.scale.x"] floatValue];
         // CGFloat currentScale = self.imgView.transform.a;
@@ -181,7 +180,7 @@
             {
                 lastScale = factor;
                 
-                CGPoint newcenter = imgView.center;
+                CGPoint newcenter = _imgView.center;
                 
                 if(collideState ==1 || collideState ==3)
                 {
@@ -233,32 +232,32 @@
         
         // 회전이 있는 경우 기준
         CGPoint center = self.imgView.center;
-        minX= CGRectGetMinX(cropRect);
-        minY= CGRectGetMinY(cropRect);
-        maxX= CGRectGetMaxX(cropRect);
-        maxY= CGRectGetMaxY(cropRect);
+        minX= CGRectGetMinX(_cropRect);
+        minY= CGRectGetMinY(_cropRect);
+        maxX= CGRectGetMaxX(_cropRect);
+        maxY= CGRectGetMaxY(_cropRect);
         
         center.x =center.x +_translateX;
         center.y = center.y +_translateY;
         
-        imgViewMaxX= center.x + imgView.frame.size.width/2;
-        imgViewMaxY= center.y+ imgView.frame.size.height/2;
+        imgViewMaxX= center.x + _imgView.frame.size.width/2;
+        imgViewMaxY= center.y+ _imgView.frame.size.height/2;
         
-        if(  (center.x - (imgView.frame.size.width/2) ) >= minX)
+        if(  (center.x - (_imgView.frame.size.width/2) ) >= minX)
         {
-            center.x = minX + (imgView.frame.size.width/2) ;
+            center.x = minX + (_imgView.frame.size.width/2) ;
         }
-        if( center.y - (imgView.frame.size.height/2) >= minY)
+        if( center.y - (_imgView.frame.size.height/2) >= minY)
         {
-            center.y = minY + (imgView.frame.size.height/2) ;
+            center.y = minY + (_imgView.frame.size.height/2) ;
         }
         if(imgViewMaxX <= maxX)
         {
-            center.x = maxX - (imgView.frame.size.width/2);
+            center.x = maxX - (_imgView.frame.size.width/2);
         }
         if(imgViewMaxY <= maxY)
         {
-            center.y = maxY - (imgView.frame.size.height/2);
+            center.y = maxY - (_imgView.frame.size.height/2);
         }
         
         self.imgView.center = center;
@@ -337,8 +336,8 @@
     double zoomScale = [[self.imgView.layer valueForKeyPath:@"transform.scale.x"] floatValue];
     double rotationZ = [[self.imgView.layer valueForKeyPath:@"transform.rotation.z"] floatValue];
     
-    CGPoint cropperViewOrigin = CGPointMake( (_cropperView.frame.origin.x - imgView.frame.origin.x)  *1/zoomScale ,
-                                            ( _cropperView.frame.origin.y - imgView.frame.origin.y ) * 1/zoomScale
+    CGPoint cropperViewOrigin = CGPointMake( (_cropperView.frame.origin.x - _imgView.frame.origin.x)  *1/zoomScale ,
+                                            ( _cropperView.frame.origin.y - _imgView.frame.origin.y ) * 1/zoomScale
                                             );
     
     CGSize cropperViewSize = CGSizeMake(_cropperView.frame.size.width * (1/zoomScale) ,_cropperView.frame.size.height * (1/zoomScale));
@@ -361,7 +360,7 @@
     
     CGRect CropRectinImage = CGRectMake((NSInteger)(CropinView.origin.x * (1/_imageScale)) ,(NSInteger)( CropinView.origin.y * (1/_imageScale)), (NSInteger)CropinViewSize.width,(NSInteger)CropinViewSize.height);
     
-    UIImage *rotInputImage = [inputImage imageRotatedByRadians:rotationZ];
+    UIImage *rotInputImage = [_inputImage imageRotatedByRadians:rotationZ];
     // Create a new image in quartz with our new bounds and original image
     CGImageRef tmp = CGImageCreateWithImageInRect([rotInputImage CGImage], CropRectinImage);
     
@@ -417,8 +416,8 @@
  }
  */
 - (void)dealloc {
-    [imgView release];
-    [inputImage release];
-    [super dealloc];
+    [_imgView release];
+    [_inputImage release];
+    [super ah_dealloc];
 }
 @end

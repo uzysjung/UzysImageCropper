@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ARCHelper.h"
 @interface UzysImageCropper : UIView <UIGestureRecognizerDelegate>
 {
     double _imageScale; //frame : image
@@ -21,9 +21,10 @@
     
        
 }
-@property (nonatomic,retain) UIImageView *imgView;
+@property (nonatomic,strong) UIImage *inputImage;
+@property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,assign) CGRect cropRect;
-@property (nonatomic, retain) UIImage *inputImage;
+
 
 - (id)initWithImage:(UIImage*)newImage andframeSize:(CGSize)frameSize andcropSize:(CGSize)cropSize;
 - (UIImage*) getCroppedImage;

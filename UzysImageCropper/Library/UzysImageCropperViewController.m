@@ -127,6 +127,6 @@
 
 - (void)dealloc {
     [cropperView release];
-    [super dealloc];
+    [super ah_dealloc];
 }
 @end

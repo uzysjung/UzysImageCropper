@@ -36,6 +36,7 @@
 		9595D4721683FA5500928DC8 /* UzysImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysImageCropperViewController.h; sourceTree = "<group>"; };
 		9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysImageCropperViewController.m; sourceTree = "<group>"; };
 		95AF06DC16BA4CA500A50CFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95AF06DE16BA555500A50CFC /* ARCHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCHelper.h; sourceTree = "<group>"; };
 		C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn.png; sourceTree = "<group>"; };
 		C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn_h.png; sourceTree = "<group>"; };
 		C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_rotate_btn.png; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		9595D46D1683FA5500928DC8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				95AF06DE16BA555500A50CFC /* ARCHelper.h */,
 				9595D46E1683FA5500928DC8 /* UIImage-Extension.h */,
 				9595D46F1683FA5500928DC8 /* UIImage-Extension.m */,
 				9595D4701683FA5500928DC8 /* UzysImageCropper.h */,
@@ -256,6 +258,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -280,6 +283,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
