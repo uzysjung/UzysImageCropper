@@ -11,6 +11,7 @@
 		9595D4741683FA5500928DC8 /* UIImage-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D46F1683FA5500928DC8 /* UIImage-Extension.m */; };
 		9595D4751683FA5500928DC8 /* UzysImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4711683FA5500928DC8 /* UzysImageCropper.m */; };
 		9595D4761683FA5500928DC8 /* UzysImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */; };
+		95AF06DD16BA4CA500A50CFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95AF06DC16BA4CA500A50CFC /* Default-568h@2x.png */; };
 		C09FE23214FCB8BC0012A2BB /* nc_crop_reset_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */; };
 		C09FE23314FCB8BC0012A2BB /* nc_crop_reset_btn_h.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */; };
 		C09FE23414FCB8BC0012A2BB /* nc_crop_rotate_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */; };
@@ -34,6 +35,7 @@
 		9595D4711683FA5500928DC8 /* UzysImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysImageCropper.m; sourceTree = "<group>"; };
 		9595D4721683FA5500928DC8 /* UzysImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysImageCropperViewController.h; sourceTree = "<group>"; };
 		9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysImageCropperViewController.m; sourceTree = "<group>"; };
+		95AF06DC16BA4CA500A50CFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C09FE22E14FCB8BC0012A2BB /* nc_crop_reset_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn.png; sourceTree = "<group>"; };
 		C09FE22F14FCB8BC0012A2BB /* nc_crop_reset_btn_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_reset_btn_h.png; sourceTree = "<group>"; };
 		C09FE23014FCB8BC0012A2BB /* nc_crop_rotate_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nc_crop_rotate_btn.png; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		C0FCD37F14973CF200BFCA38 = {
 			isa = PBXGroup;
 			children = (
-				C0FFFEA7149B21AE007B78DE /* QuartzCore.framework */,
+				95AF06DC16BA4CA500A50CFC /* Default-568h@2x.png */,
 				C0FCD39414973CF200BFCA38 /* UzysImageCropper */,
 				C0FCD38D14973CF200BFCA38 /* Frameworks */,
 				C0FCD38B14973CF200BFCA38 /* Products */,
@@ -114,6 +116,7 @@
 		C0FCD38D14973CF200BFCA38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0FFFEA7149B21AE007B78DE /* QuartzCore.framework */,
 				C0FCD38E14973CF200BFCA38 /* UIKit.framework */,
 				C0FCD39014973CF200BFCA38 /* Foundation.framework */,
 				C0FCD39214973CF200BFCA38 /* CoreGraphics.framework */,
@@ -206,6 +209,7 @@
 				C09FE23414FCB8BC0012A2BB /* nc_crop_rotate_btn.png in Resources */,
 				C09FE23514FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png in Resources */,
 				9552A78C168305FC006C39B5 /* Hyuna.jpg in Resources */,
+				95AF06DD16BA4CA500A50CFC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,7 @@
 		C0FCD3A914973CF200BFCA38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
 				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";
@@ -304,6 +309,7 @@
 		C0FCD3AA14973CF200BFCA38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
 				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";

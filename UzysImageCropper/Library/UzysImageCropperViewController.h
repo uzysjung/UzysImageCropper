@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "UzysImageCropper.h"
 @protocol UzysImageCropperDelegate;
-
 @class  UzysImageCropper;
 
 @interface UzysImageCropperViewController : UIViewController 
@@ -17,7 +16,7 @@
 @property (nonatomic, assign) id <UzysImageCropperDelegate> delegate;
 
 - (id)initWithImage:(UIImage*)newImage andframeSize:(CGSize)frameSize andcropSize:(CGSize)cropSize;
-- (void) actionRotation:(id) senders;
+- (void)actionRotation:(id) senders;
 @end
 
 @protocol UzysImageCropperDelegate <NSObject>

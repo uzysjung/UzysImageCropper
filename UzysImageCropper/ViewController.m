@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 @implementation ViewController
 
 - (void)didReceiveMemoryWarning
@@ -42,11 +43,18 @@
 
 - (void)viewDidUnload
 {
+    self.resultImgView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
+- (void)dealloc
+{
+    [_resultImgView release];
+    [_imgCropperViewController release];
+    [super dealloc];
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -82,7 +90,10 @@
         [self.resultImgView removeFromSuperview];
     
     self.resultImgView = [[[UIImageView alloc]  initWithImage:image] autorelease];
-    [self.resultImgView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width*(image.size.height/image.size.width))];
+    self.resultImgView.layer.borderWidth =1;
+    self.resultImgView.layer.borderColor = [UIColor orangeColor].CGColor;
+    
+    [self.resultImgView setFrame:CGRectMake(2, 5, self.view.frame.size.width-4, (self.view.frame.size.width-4)*(image.size.height/image.size.width))];
     [self.view addSubview:self.resultImgView];
     [self dismissModalViewControllerAnimated:YES];
 

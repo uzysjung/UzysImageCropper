@@ -6,9 +6,8 @@
 //
 
 #import "UIImage-Extension.h"
-
-CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
-CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
+CGFloat DegreesToRadians(CGFloat degrees);
+CGFloat RadiansToDegrees(CGFloat radians);
 
 @implementation UIImage (CS_Extensions)
 
@@ -287,6 +286,10 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 
 @end;
+
+#pragma mark - C function
+CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
+CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
 //static CGRect swapWidthAndHeight(CGRect rect)
 //{

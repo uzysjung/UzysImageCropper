@@ -8,11 +8,8 @@
 #import <UIKit/UIKit.h>
 #import "UzysImageCropperViewController.h"
 
-
-
 @interface ViewController : UIViewController <UzysImageCropperDelegate>
-{
-    UzysImageCropperViewController *_imgCropperViewController;
-}
+
 @property (nonatomic,retain) UIImageView *resultImgView;
+@property (nonatomic,retain) UzysImageCropperViewController *imgCropperViewController;
 @end
