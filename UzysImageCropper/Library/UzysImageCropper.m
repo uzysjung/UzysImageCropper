@@ -25,11 +25,11 @@
 @synthesize imgView = _imgView,inputImage=_inputImage,cropRect=_cropRect;
 
 #pragma mark - initialize
-
 - (id)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         NSAssert(TRUE,@"Plz initialize using initWithImage:andframeSize:andcropSize: ");
     }
     
@@ -38,10 +38,10 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         // Initialization code
         NSAssert(TRUE,@"Plz initialize using initWithImage:andframeSize:andcropSize: ");
-
     }
     return self;
 }
@@ -51,7 +51,6 @@
     self = [super init];
     if(self)
     {
-        
         //Variable for GestureRecognizer
         _translateX =0;
         _translateY =0;
@@ -80,7 +79,6 @@
         
         //cropX위치 + imgViewframe이 가운데 정렬되어있으므로 그위치 만큼 이동.
         _cropRect = CGRectMake(cropX+ _imgViewframeInitValue.origin.x, cropY+ _imgViewframeInitValue.origin.y, _imageScale*cropSize.width, _imageScale*cropSize.height);
-        
         
         //_cropperView show the view will crop.
         _cropperView = [[UIView alloc] initWithFrame:_cropRect];
@@ -259,14 +257,11 @@
         }
         
         self.imgView.center = center;
-        
         prevLoc = location;
-        
     }
 }
 - (void)RotationAction:(UIGestureRecognizer *)sender
 {
-    
     UIRotationGestureRecognizer *recognizer = (UIRotationGestureRecognizer *) sender;
     static CGFloat rot=0;
     //float RotationinDegrees = recognizer.rotation * (180/M_PI);
@@ -278,11 +273,10 @@
     if(sender.state == UIGestureRecognizerStateBegan || sender.state == UIGestureRecognizerStateChanged)
     {
         self.imgView.transform = CGAffineTransformRotate(self.imgView.transform, recognizer.rotation - rot);
-        NSLog(@"imgViewFrame : %@",NSStringFromCGRect(self.imgView.frame));
+//        NSLog(@"imgViewFrame : %@",NSStringFromCGRect(self.imgView.frame));
         rot =recognizer.rotation;
         
     }
-    
     
     if (sender.state == UIGestureRecognizerStateEnded) {
         if(self.imgView.frame.size.width < _cropperView.frame.size.width || self.imgView.frame.size.height < _cropperView.frame.size.height)
@@ -296,7 +290,6 @@
 }
 - (void)DoubleTapAction:(UIGestureRecognizer *)sender
 {
-    //각도도 20도 단위로 맞추기
     [UIView animateWithDuration:0.2f animations:^(void) {
         
         self.imgView.center = _cropperView.center;
@@ -337,7 +330,6 @@
     CGPoint cropperViewOrigin = CGPointMake( (_cropperView.frame.origin.x - _imgView.frame.origin.x)  *1/zoomScale ,
                                             ( _cropperView.frame.origin.y - _imgView.frame.origin.y ) * 1/zoomScale
                                             );
-    
     CGSize cropperViewSize = CGSizeMake(_cropperView.frame.size.width * (1/zoomScale) ,_cropperView.frame.size.height * (1/zoomScale));
     
     CGRect CropinView = CGRectMake(cropperViewOrigin.x, cropperViewOrigin.y, cropperViewSize.width  , cropperViewSize.height);
@@ -389,13 +381,20 @@
         }
     }];
 }
+
 - (void) actionRestore
 {
     [UIView animateWithDuration:0.2 animations:^{
         self.imgView.transform = CGAffineTransformIdentity;
         self.imgView.center = _cropperView.center;
     }];
+}
 
+- (void)dealloc {
+    [_imgView release];
+    [_inputImage release];
+    [_cropperView release];
+    [super ah_dealloc];
 }
 /*
  // Only override drawRect: if you perform custom drawing.
@@ -405,10 +404,4 @@
  // Drawing code
  }
  */
-- (void)dealloc {
-    [_imgView release];
-    [_inputImage release];
-    [_cropperView release];
-    [super ah_dealloc];
-}
 @end

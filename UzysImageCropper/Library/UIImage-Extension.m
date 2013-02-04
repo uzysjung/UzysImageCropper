@@ -13,13 +13,11 @@ CGFloat RadiansToDegrees(CGFloat radians);
 
 -(UIImage *)imageAtRect:(CGRect)rect
 {
-    
     CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], rect);
     UIImage* subImage = [UIImage imageWithCGImage: imageRef];
     CGImageRelease(imageRef);
     
     return subImage;
-    
 }
 
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize {
@@ -54,7 +52,6 @@ CGFloat RadiansToDegrees(CGFloat radians);
         scaledHeight = height * scaleFactor;
         
         // center the image
-        
         if (widthFactor > heightFactor) {
             thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5; 
         } else if (widthFactor < heightFactor) {
@@ -64,7 +61,6 @@ CGFloat RadiansToDegrees(CGFloat radians);
     
     
     // this is actually the interesting part:
-    
     UIGraphicsBeginImageContext(targetSize);
     
     CGRect thumbnailRect = CGRectZero;
@@ -78,7 +74,6 @@ CGFloat RadiansToDegrees(CGFloat radians);
     UIGraphicsEndImageContext();
     
     if(newImage == nil) NSLog(@"could not scale image");
-    
     
     return newImage ;
 }
@@ -124,7 +119,6 @@ CGFloat RadiansToDegrees(CGFloat radians);
         }
     }
     
-    
     // this is actually the interesting part:
     
     UIGraphicsBeginImageContext(targetSize);
@@ -141,10 +135,8 @@ CGFloat RadiansToDegrees(CGFloat radians);
     
     if(newImage == nil) NSLog(@"could not scale image");
     
-    
     return newImage ;
 }
-
 
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize {
     
@@ -180,10 +172,8 @@ CGFloat RadiansToDegrees(CGFloat radians);
     
     if(newImage == nil) NSLog(@"could not scale image");
     
-    
     return newImage ;
 }
-
 
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians
 {
@@ -283,7 +273,6 @@ CGFloat RadiansToDegrees(CGFloat radians);
     UIGraphicsEndImageContext();
     return newImage;
 }
-
 
 @end;
 

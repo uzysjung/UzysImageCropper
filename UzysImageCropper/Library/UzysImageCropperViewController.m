@@ -16,9 +16,10 @@
     self = [super init];
 	
 	if (self) {
+        
         if(newImage.size.width <= cropSize.width || newImage.size.height <= cropSize.height)
         {
-            NSLog(@"Image Size is smaller than cropSzie");
+            NSLog(@"Image Size is smaller than cropSize");
             newImage = [newImage imageByScalingProportionallyToSize:CGSizeMake(cropSize.width*1.3, cropSize.height*1.3)];
         }
         self.view.backgroundColor = [UIColor blackColor];
@@ -59,34 +60,29 @@
         [btn_restore setImage:[UIImage imageNamed:@"nc_crop_reset_btn_h.png"] forState:UIControlStateHighlighted];
         btn_restore.alpha = 0.7;
         [self.view addSubview:btn_restore];
-        
-        
-        
     }
     
     return self;
     
 }
--(void) actionRestore:(id) senders {
-
+-(void) actionRestore:(id) senders
+{
     [cropperView actionRestore];
-    
 }
--(void) actionRotation:(id) senders {
-
+-(void) actionRotation:(id) senders
+{
     [cropperView actionRotate];
-    
 }
-- (void)cancelCropping {
+- (void)cancelCropping
+{
 	[delegate imageCropperDidCancel:self]; 
 }
 
-- (void)finishCropping {
-	
+- (void)finishCropping
+{
 	//NSLog(@"%@",@"ImageCropper finish cropping end");
     UIImage *cropped =[cropperView getCroppedImage];
 	[delegate imageCropper:self didFinishCroppingWithImage:cropped];
-    
 }
 
 - (void)didReceiveMemoryWarning
