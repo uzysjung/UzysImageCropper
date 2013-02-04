@@ -6,6 +6,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "ARCHelper.h"
+
 @interface UIImage (CS_Extensions)
 - (UIImage *)imageAtRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;

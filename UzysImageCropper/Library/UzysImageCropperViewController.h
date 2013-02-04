@@ -16,7 +16,6 @@
 
 @property (nonatomic,strong) UzysImageCropper *cropperView;
 @property (nonatomic, assign) id <UzysImageCropperDelegate> delegate;
-
 - (id)initWithImage:(UIImage*)newImage andframeSize:(CGSize)frameSize andcropSize:(CGSize)cropSize;
 - (void)actionRotation:(id) senders;
 @end

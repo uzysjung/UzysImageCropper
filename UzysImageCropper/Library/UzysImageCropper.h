@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ARCHelper.h"
+
 @interface UzysImageCropper : UIView <UIGestureRecognizerDelegate>
 {
     double _imageScale; //frame : image
