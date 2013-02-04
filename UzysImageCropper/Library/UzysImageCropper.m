@@ -12,6 +12,7 @@
 #import "UzysImageCropper.h"
 #import "UIImage-Extension.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import <QuartzCore/QuartzCore.h>
 @interface UzysImageCropper()
 - (void)setupGestureRecognizer;
 - (void)zoomAction:(UIGestureRecognizer *)sender;
@@ -103,9 +104,7 @@
         
         self.clipsToBounds = YES;
     }
-    
     return self;
-    
 }
 
 
@@ -171,7 +170,6 @@
             
             if(lastScale - factor <= 0) //확대 모션
             {
-                
                 lastScale = factor;
                 CGAffineTransform transformN = CGAffineTransformScale(self.imgView.transform, newScale, newScale);
                 self.imgView.transform = transformN;
@@ -361,13 +359,8 @@
     CGRect CropRectinImage = CGRectMake((NSInteger)(CropinView.origin.x * (1/_imageScale)) ,(NSInteger)( CropinView.origin.y * (1/_imageScale)), (NSInteger)CropinViewSize.width,(NSInteger)CropinViewSize.height);
     
     UIImage *rotInputImage = [_inputImage imageRotatedByRadians:rotationZ];
-    // Create a new image in quartz with our new bounds and original image
     CGImageRef tmp = CGImageCreateWithImageInRect([rotInputImage CGImage], CropRectinImage);
-    
-    // Pump our cropped image back into a UIImage object
     UIImage *newImage = [UIImage imageWithCGImage:tmp];
-    
-    // Be good memory citizens and release the memory
     CGImageRelease(tmp);
     
     if(newImage.size.width != _realCropsize.width)
@@ -376,13 +369,10 @@
     }
     
     return newImage;
-    
 }
 - (BOOL) saveCroppedImage:(NSString *) path
 {
-    
     return [UIImagePNGRepresentation([self getCroppedImage]) writeToFile:path atomically:YES];
-    
 }
 - (void) actionRotate
 {
@@ -418,6 +408,7 @@
 - (void)dealloc {
     [_imgView release];
     [_inputImage release];
+    [_cropperView release];
     [super ah_dealloc];
 }
 @end

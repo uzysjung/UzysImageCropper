@@ -10,7 +10,6 @@
 @interface UzysImageCropper : UIView <UIGestureRecognizerDelegate>
 {
     double _imageScale; //frame : image
-
     double _translateX;
     double _translateY;
     
@@ -18,13 +17,10 @@
     CGPoint _imgViewcenterInitValue;
     CGSize _realCropsize;
     UIView* _cropperView;
-    
-       
 }
 @property (nonatomic,strong) UIImage *inputImage;
 @property (nonatomic,strong) UIImageView *imgView;
 @property (nonatomic,assign) CGRect cropRect;
-
 
 - (id)initWithImage:(UIImage*)newImage andframeSize:(CGSize)frameSize andcropSize:(CGSize)cropSize;
 - (UIImage*) getCroppedImage;

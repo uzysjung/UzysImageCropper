@@ -5,7 +5,7 @@
 //  Copyright 2009 Catamount Software. All rights reserved.
 //
 #import <Foundation/Foundation.h>
-
+#import "ARCHelper.h"
 @interface UIImage (CS_Extensions)
 - (UIImage *)imageAtRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
@@ -15,14 +15,6 @@
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 - (UIImage *)imageByColorizing:(UIColor *)theColor;
 - (UIImage *)convertImageToGrayScale:(UIColor *)theColor;
-//- (UIImage *)imageBygrayishImage;
-//- (UIImage *)convertToGrayscale;
-//- (UIImage *)convertToDark ;
 @end
 
-@interface UIImage (UKImage)
-
--(UIImage*)rotate:(UIImageOrientation)orient;
-
-@end
 

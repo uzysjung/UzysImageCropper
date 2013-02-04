@@ -53,7 +53,7 @@
 {
     [_resultImgView release];
     [_imgCropperViewController release];
-    [super dealloc];
+    [super ah_dealloc];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
