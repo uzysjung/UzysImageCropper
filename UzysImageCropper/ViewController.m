@@ -60,7 +60,6 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -75,7 +74,6 @@
 {
 	[super viewDidDisappear:animated];
 }
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -84,8 +82,8 @@
 
 #pragma mark - UzysImageCropperDelegate
 
-- (void)imageCropper:(UzysImageCropperViewController *)cropper didFinishCroppingWithImage:(UIImage *)image {
-    
+- (void)imageCropper:(UzysImageCropperViewController *)cropper didFinishCroppingWithImage:(UIImage *)image
+{
     if(self.resultImgView)
         [self.resultImgView removeFromSuperview];
     
@@ -99,7 +97,8 @@
 
 }
 
-- (void)imageCropperDidCancel:(UzysImageCropperViewController *)cropper {
+- (void)imageCropperDidCancel:(UzysImageCropperViewController *)cropper
+{
     [self dismissModalViewControllerAnimated:YES];
 }
 @end
