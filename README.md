@@ -9,7 +9,7 @@ An alternative to the UIImagePickerController editor with extended features.
 * You can crop image to exact size which you assign  
 * Support rotate, scale, move, restore action.
 * Support Both ARC and non-ARC Project
-* 
+
 ## Installation
 Copy over the files libary folder to your project folder
 
