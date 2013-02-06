@@ -352,7 +352,7 @@
     
     UIImage *rotInputImage = [_inputImage imageRotatedByRadians:rotationZ];
     CGImageRef tmp = CGImageCreateWithImageInRect([rotInputImage CGImage], CropRectinImage);
-    UIImage *newImage = [UIImage imageWithCGImage:tmp];
+    UIImage *newImage = [UIImage imageWithCGImage:tmp scale:self.inputImage.scale orientation:self.inputImage.imageOrientation];
     CGImageRelease(tmp);
     
     if(newImage.size.width != _realCropsize.width)
