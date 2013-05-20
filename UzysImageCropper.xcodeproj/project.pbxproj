@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9552A78C168305FC006C39B5 /* Hyuna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9552A78B168305FC006C39B5 /* Hyuna.jpg */; };
 		9595D4741683FA5500928DC8 /* UIImage-Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D46F1683FA5500928DC8 /* UIImage-Extension.m */; };
 		9595D4751683FA5500928DC8 /* UzysImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4711683FA5500928DC8 /* UzysImageCropper.m */; };
 		9595D4761683FA5500928DC8 /* UzysImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9595D4731683FA5500928DC8 /* UzysImageCropperViewController.m */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9552A78B168305FC006C39B5 /* Hyuna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hyuna.jpg; sourceTree = "<group>"; };
 		9595D46E1683FA5500928DC8 /* UIImage-Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extension.h"; sourceTree = "<group>"; };
 		9595D46F1683FA5500928DC8 /* UIImage-Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extension.m"; sourceTree = "<group>"; };
 		9595D4701683FA5500928DC8 /* UzysImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysImageCropper.h; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 			children = (
 				959ECF3216BF630700048E1D /* Default-568h@2x.png */,
 				9595D46D1683FA5500928DC8 /* Library */,
-				9552A78B168305FC006C39B5 /* Hyuna.jpg */,
 				C0FCD39D14973CF200BFCA38 /* AppDelegate.h */,
 				C0FCD39E14973CF200BFCA38 /* AppDelegate.m */,
 				C0FCD3A014973CF200BFCA38 /* ViewController.h */,
@@ -210,7 +207,6 @@
 				C09FE23314FCB8BC0012A2BB /* nc_crop_reset_btn_h.png in Resources */,
 				C09FE23414FCB8BC0012A2BB /* nc_crop_rotate_btn.png in Resources */,
 				C09FE23514FCB8BC0012A2BB /* nc_crop_rotate_btn_h.png in Resources */,
-				9552A78C168305FC006C39B5 /* Hyuna.jpg in Resources */,
 				959ECF3316BF630700048E1D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +259,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jaehoon Jung (TUH344CALK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -279,6 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "7EC5F80F-ECD9-4580-AAF4-9061490479AB";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -293,6 +291,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jaehoon Jung (TUH344CALK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -303,6 +302,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "7EC5F80F-ECD9-4580-AAF4-9061490479AB";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -312,10 +312,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jaehoon Jung (TUH344CALK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
 				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7EC5F80F-ECD9-4580-AAF4-9061490479AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -324,10 +326,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jaehoon Jung (TUH344CALK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UzysImageCropper/UzysImageCropper-Prefix.pch";
 				INFOPLIST_FILE = "UzysImageCropper/UzysImageCropper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7EC5F80F-ECD9-4580-AAF4-9061490479AB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

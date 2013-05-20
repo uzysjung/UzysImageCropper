@@ -8,14 +8,14 @@
 #import "ARCHelper.h"
 
 @interface UIImage (CS_Extensions)
-- (UIImage *)imageAtRect:(CGRect)rect;
-- (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
-- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize;
-- (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians;
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
-- (UIImage *)imageByColorizing:(UIColor *)theColor;
-- (UIImage *)convertImageToGrayScale:(UIColor *)theColor;
+
+- (UIImage*)resizedImageToFitInSize:(CGSize)boundingSize scaleIfSmaller:(BOOL)scale;
+- (UIImage*)resizedImageToSize:(CGSize)dstSize;
+- (UIImage *)cropImage:(CGRect) rect;
+- (UIImage *)fixOrientation;
+
 @end
 
 

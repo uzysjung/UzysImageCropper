@@ -18,8 +18,10 @@
 #pragma mark - View lifecycle
 - (void) cropButton
 {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [self presentModalViewController:_imgCropperViewController animated:YES];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Image Picker" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Close" otherButtonTitles:@"Camera",@"Library", nil];
+    
+    [actionSheet showInView:self.view];
+    [actionSheet reloadInputViews];
     
 }
 - (void)viewDidLoad
@@ -29,13 +31,9 @@
     
     [self.view setFrame:[UIScreen mainScreen].applicationFrame];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    _imgCropperViewController = [[UzysImageCropperViewController alloc] initWithImage:[UIImage imageNamed:@"Hyuna.jpg"] andframeSize:[UIScreen mainScreen].bounds.size andcropSize:CGSizeMake(1024, 580)];
-    _imgCropperViewController.delegate = self;
-    _imgCropperViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     
     UIButton *cropper = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [cropper setFrame:CGRectMake(0, 0, 100, 30)];
-    cropper.center = self.view.center;
+    [cropper setFrame:CGRectMake(110, self.view.frame.size.height - 40, 100, 30)];
     [cropper setTitle:@"Crop" forState:UIControlStateNormal];
     [cropper addTarget:self action:@selector(cropButton) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cropper];
@@ -43,6 +41,8 @@
 
 - (void)viewDidUnload
 {
+    self.imgCropperViewController = nil;
+    self.picker = nil;
     self.resultImgView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -51,6 +51,7 @@
 
 - (void)dealloc
 {
+    [_picker release];
     [_resultImgView release];
     [_imgCropperViewController release];
     [super ah_dealloc];
@@ -87,18 +88,69 @@
     if(self.resultImgView)
         [self.resultImgView removeFromSuperview];
     
-    self.resultImgView = [[[UIImageView alloc]  initWithImage:image] autorelease];
-    self.resultImgView.layer.borderWidth =1;
-    self.resultImgView.layer.borderColor = [UIColor orangeColor].CGColor;
-    
-    [self.resultImgView setFrame:CGRectMake(2, 5, self.view.frame.size.width-4, (self.view.frame.size.width-4)*(image.size.height/image.size.width))];
+    self.resultImgView = [[[UIImageView alloc]  initWithFrame:CGRectMake(5, 5, 310, 310)] autorelease];
+    self.resultImgView.image = image;
+    self.resultImgView.backgroundColor = [UIColor darkGrayColor];
+    self.resultImgView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:self.resultImgView];
-    [self dismissModalViewControllerAnimated:YES];
 
+    NSLog(@"cropping Image Size : %@", NSStringFromCGSize(image.size));
+   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imageCropperDidCancel:(UzysImageCropperViewController *)cropper
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [_picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - UIImagePickerViewController
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSLog(@"original Image Size : %@", NSStringFromCGSize(image.size));
+    _imgCropperViewController = [[UzysImageCropperViewController alloc] initWithImage:image andframeSize:picker.view.frame.size andcropSize:CGSizeMake(1024, 580)];
+    _imgCropperViewController.delegate = self;
+    [picker presentViewController:_imgCropperViewController animated:YES completion:nil];
+    [_imgCropperViewController release];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+ 
+    switch (buttonIndex)
+    {
+        case 1:
+        {
+#if TARGET_IPHONE_SIMULATOR
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"demo" message:@"camera not available"delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+#elif TARGET_OS_IPHONE
+            [[UIApplication sharedApplication] setStatusBarHidden:YES];
+            self.picker=[[[UIImagePickerController alloc]init] autorelease];
+            self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            self.picker.delegate  = self;
+            [self presentViewController:self.picker animated:YES completion:nil];
+#endif
+        }
+            break;
+        case 2:
+        {
+            [[UIApplication sharedApplication] setStatusBarHidden:YES];
+            self.picker=[[[UIImagePickerController alloc]init] autorelease];
+            self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            self.picker.delegate  = self;
+            [self presentViewController:self.picker animated:YES completion:nil];
+        }
+            break;
+    }
+    
+}
+
 @end

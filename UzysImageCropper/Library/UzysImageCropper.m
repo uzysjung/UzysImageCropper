@@ -350,14 +350,12 @@
     
     CGRect CropRectinImage = CGRectMake((NSInteger)(CropinView.origin.x * (1/_imageScale)) ,(NSInteger)( CropinView.origin.y * (1/_imageScale)), (NSInteger)CropinViewSize.width,(NSInteger)CropinViewSize.height);
     
-    UIImage *rotInputImage = [_inputImage imageRotatedByRadians:rotationZ];
-    CGImageRef tmp = CGImageCreateWithImageInRect([rotInputImage CGImage], CropRectinImage);
-    UIImage *newImage = [UIImage imageWithCGImage:tmp scale:self.inputImage.scale orientation:self.inputImage.imageOrientation];
-    CGImageRelease(tmp);
+    UIImage *rotInputImage = [[_inputImage fixOrientation] imageRotatedByRadians:rotationZ];
+    UIImage *newImage = [rotInputImage cropImage:CropRectinImage];
     
     if(newImage.size.width != _realCropsize.width)
     {
-        newImage = [newImage imageByScalingProportionallyToSize:_realCropsize];
+        newImage = [newImage resizedImageToFitInSize:_realCropsize scaleIfSmaller:YES];
     }
     
     return newImage;
@@ -396,12 +394,5 @@
     [_cropperView release];
     [super ah_dealloc];
 }
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
+
 @end
