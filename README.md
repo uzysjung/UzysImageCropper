@@ -45,3 +45,11 @@ _imgCropperViewController.modalPresentationStyle = UIModalPresentationFullScreen
     [self dismissModalViewControllerAnimated:YES];
 }
 ```
+
+## Contact
+
+[Uzys.net](http://uzys.net)
+
+## License
+
+See [LICENSE](https://github.com/uzysjung/UzysImageCropper/blob/master/MIT-LICENSE.txt).
